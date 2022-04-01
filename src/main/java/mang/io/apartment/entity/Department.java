@@ -32,19 +32,20 @@ public class Department {
         this.departmentId = departmentId;
     }
 
-    public  String getDepartmentAddress(){
-        return departmentAddress;
-    }
-
-    public void setDepartmentAddress(){
-        this.departmentAddress = departmentAddress;
-    }
     public String getDepartmentName() {
         return departmentName;
     }
 
     public void setDepartmentName(String departmentName) {
         this.departmentName = departmentName;
+    }
+
+    public String getDepartmentAddress() {
+        return departmentAddress;
+    }
+
+    public void setDepartmentAddress(String departmentAddress) {
+        this.departmentAddress = departmentAddress;
     }
 
     public String getDepartmentCode() {
