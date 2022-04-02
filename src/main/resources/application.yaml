@@ -1,0 +1,48 @@
+server:
+  port: 8081
+
+Spring:
+  profiles:
+    active: qa
+
+---
+
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/apmtdb
+    password: toor
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+---
+
+  spring:
+    profiles: qa
+    datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      url: jdbc:mysql://localhost:3306/apmtdb-qa
+      password: toor
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: 'true'
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/apmtdb-prod
+    password: toor
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
