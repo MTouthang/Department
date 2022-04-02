@@ -1,4 +1,4 @@
-package mang.io.apartment.controller;
+package mang.io.apartment.repository;
 
 import mang.io.apartment.entity.Department;
 import mang.io.apartment.repository.DepartmentRepository;
@@ -12,7 +12,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
-class DepartmentControllerTest {
+class DepartmentRepositoryTest {
 
     @Autowired
     private DepartmentRepository departmentRepository;
