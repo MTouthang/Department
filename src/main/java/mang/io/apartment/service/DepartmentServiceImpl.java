@@ -1,12 +1,14 @@
 package mang.io.apartment.service;
 
 import mang.io.apartment.entity.Department;
+import mang.io.apartment.error.DepartmentNotFoundException;
 import mang.io.apartment.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 
 @Service
@@ -26,8 +28,13 @@ public class DepartmentServiceImpl implements DepartmentService{
     }
 
     @Override
-    public Department fetchDepartmentById(Long id) {
-        return departmentRepository.findById(id).get();
+    public Department fetchDepartmentById(Long id) throws DepartmentNotFoundException {
+        Optional<Department>  department = departmentRepository.findById(id);
+
+        if (!department.isPresent()){
+            throw new DepartmentNotFoundException("Department Not Available");
+        }
+        return department.get();
     }
 
     @Override

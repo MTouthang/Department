@@ -1,6 +1,7 @@
 package mang.io.apartment.controller;
 
 import mang.io.apartment.entity.Department;
+import mang.io.apartment.error.DepartmentNotFoundException;
 import mang.io.apartment.service.DepartmentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +33,7 @@ public class DepartmentController {
     }
 
     @GetMapping("department/{id}")
-    public Department fetchDepartmentById(@PathVariable Long id){
+    public Department fetchDepartmentById(@PathVariable Long id) throws DepartmentNotFoundException {
         return departmentService.fetchDepartmentById(id);
     }
 

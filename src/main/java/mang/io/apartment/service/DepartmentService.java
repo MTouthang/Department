@@ -1,6 +1,7 @@
 package mang.io.apartment.service;
 
 import mang.io.apartment.entity.Department;
+import mang.io.apartment.error.DepartmentNotFoundException;
 
 import java.util.List;
 
@@ -9,7 +10,7 @@ public interface DepartmentService  {
 
     public List<Department> fetchDepartment();
 
-    public Department fetchDepartmentById(Long id);
+    public Department fetchDepartmentById(Long id) throws DepartmentNotFoundException;
 
     public void deleteDepartmentById(Long id);
 
